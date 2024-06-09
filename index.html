@@ -43,7 +43,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./my-avatar.png" alt="Huz" width="80">
         </figure>
 
         <div class="info-content">
@@ -173,9 +173,36 @@
       -->
 
         <article class="about  active" data-page="about page">
+          <style>
+            .article-titleee::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 30px;
+              height: 3px;
+              background: #fc7c0c;
+              border-radius: 3px;
+            }
+            .article-titleee {
+              position: relative;
+              padding-bottom: 7px;
+            }
+            .article-titleee {
+              font-weight: var(--fw-600);
+              padding-bottom: 15px;
+            }
 
+            .article-titleee::after {
+              width: 40px;
+              height: 5px;
+            }
+            .about .article-titleee {
+                margin-bottom: 20px;
+            }
+              </style>
           <header>
-            <h2 class="h2 article-title">Audit Logger</h2>
+            <h2 class="h2 article-titleee">Audit Logger</h2>
           </header>
           <section class="about-text">
             <p>
@@ -188,6 +215,9 @@
               will be logged.
             </p>
             <style>
+              .navbar-link.activeee {
+                  color: #fc7c0c;
+              }
               .button {
                 display: inline-block;
                 border-radius: 1px;
@@ -238,10 +268,103 @@
               }
             </style>
 
-            <button class="navbar-link  active" data-nav-link style="vertical-align:middle"
+            <button class="navbar-link  activeee" data-nav-link style="vertical-align:middle"
               onclick="window.location.href='https://dsc.gg/auditlogger';"><span class="font">Invite Me</span></button>
 
           </section>
+          <header>
+            <style>
+              .article-titlee::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 30px;
+                height: 3px;
+                background: #f804fa;
+                border-radius: 3px;
+              }
+              .article-titlee {
+                position: relative;
+                padding-bottom: 7px;
+              }
+              .article-titlee {
+                font-weight: var(--fw-600);
+                padding-bottom: 15px;
+              }
+
+              .article-titlee::after {
+                width: 40px;
+                height: 5px;
+              }
+              .about .article-titlee {
+                  margin-bottom: 20px;
+              }
+                </style>
+            <h2 class="h2 article-titlee">Fam Chat</h2>
+          </header>
+          <section class="about-text">
+            <p>
+              <b>Fam Chat</b> is a Vibrant and Welcoming discord server, We are Lit-Ppl creating a Global Community providing Fun & a Safe space..
+            </p>
+            <style>
+              .navbar-link.activee {
+                  color: #f804fa;
+              }
+              .button {
+                display: inline-block;
+                border-radius: 1px;
+                background-color: #f804fa;
+                border: none;
+                color: orange;
+                text-align: center;
+                font-family: Poppins;
+                font: Poppins;
+                font-size: 20;
+                padding: 20px;
+                width: 200px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+              }
+
+              .font {
+                font-family: Poppins;
+              }
+
+              .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+              }
+
+              .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                font-family: Poppins;
+                font: Poppins;
+                font-display: Poppins;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+              }
+
+              .button:hover span {
+                padding-right: 25px;
+              }
+
+              .button:hover span:after {
+                opacity: 1;
+                right: 0;
+              }
+            </style>
+            <a href="fam.html"><button class="navbar-link  activee" data-nav-link style="vertical-align:middle"><span class="font">Visit Site</span></button> </a><button class="navbar-link  activee" data-nav-link style="vertical-align:middle"
+              onclick="window.location.href='https://discord.gg/famchatofficial';"><span class="font">Join Now</span></button>
+          </section>
+        </article>
+      </article>
 
     </div>
 

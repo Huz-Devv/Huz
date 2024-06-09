@@ -129,7 +129,7 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, ion-icon, a, button, time, span { display: inline-block; margin: 5px; }
 
 button {
   font: inherit;
