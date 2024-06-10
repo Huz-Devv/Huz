@@ -5,14 +5,14 @@ const path = require('path');
 const { WebhookClient, EmbedBuilder } = require('discord.js');
 const app = express();
 const port = process.env.PORT || 3000;
-const { bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11, heartBot1, heartBot2 } = require('./status-config.json');
+const { bot1, bot2, bot3, bot4, bot5, heartBot1, heartBot2, heartBot3, heartBot4, heartBot5, heartBot6 } = require('./status-config.json');
 
 // Discord webhook URL
 const webhookUrl = 'https://discord.com/api/webhooks/1249552845028462592/7XybnGPfBfAjzjv3EE0YS9aBYPCdMSTN0A8O0jN6_jjltzvTgi9m_3oib404AS-rqFt9';
 const webhookClient = new WebhookClient({ url: webhookUrl });
 
-const tcpBotArray = [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11];
-const heartbeatBotArray = [heartBot1, heartBot2];
+const tcpBotArray = [bot1, bot2, bot3, bot4, bot5];
+const heartbeatBotArray = [heartBot1, heartBot2, heartBot3, heartBot4, heartBot5, heartBot6];
 
 let messageID = null;
 
@@ -28,8 +28,8 @@ function generateBotStatusHTML(statuses) {
     return statuses.map(bot => `
         <div class="card status">
             <h1 class="statustext">
-                <i class="fas fa-circle ${bot.online ? 'Operational' : 'Down'}"></i> ${bot.name} is
-                <span class="${bot.online ? 'Operational' : 'Down'}">${bot.online ? 'Operational' : 'Down'}</span>
+                <i class="fas fa-circle ${bot.online ? 'operational' : 'down'}"></i> ${bot.name} is
+                <span class="${bot.online ? 'operational' : 'down'}">${bot.online ? 'Operational' : 'Down'}</span>
             </h1>
         </div>
         <div style="padding-top: 20px"></div>
@@ -152,4 +152,3 @@ app.listen(port, () => {
 
 // Schedule status updates to Discord every minute
 setInterval(sendStatusEmbed, 60000);
-
