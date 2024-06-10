@@ -1,0 +1,45 @@
+{
+    "heartBot1": {
+        "name": "Fam Chat Official"
+      },
+    "bot1": {
+        "name": "Fam Verifier",
+        "address": "141.94.61.101",
+        "port": "10002"
+    },
+    "heartBot2": {
+        "name": "Fam Chat Music"
+      },
+    "heartBot3": {
+        "name": "Fam Complaint"
+      },
+    "heartBot4": {
+        "name": "Confessions"
+      },
+    "bot2": {
+        "name": "Huzi Premium",
+        "address": "45.90.12.122",
+        "port": "6656"
+    },
+    "heartBot5": {
+        "name": "Zalim Bot"
+      },
+    "bot3": {
+        "name": "Zalim Music",
+        "address": "45.90.12.122",
+        "port": "6658"
+    },
+    "heartBot6": {
+        "name": "𝐂𝐇𝐈𝐋𝐋 𝐇𝐄𝐀𝐕𝐄𝐍"
+      },
+    "bot4": {
+        "name": "Jana's Music",
+        "address": "45.90.12.122",
+        "port": "6655"
+    },
+    "bot5": {
+        "name": "Audit Logger",
+        "address": "auditlogger.nodelegend.com",
+        "port": ""
+    }
+}
