@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Huz's playlist" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+    <title>Huz Spotify</title>
+    <link href="main.54274925.chunk.css" rel="stylesheet">
+    <style>
+        #now-playing-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #now-playing-box iframe {
+            border: none;
+            border-radius: 10px;
+            background-color: #2a2a2a;
+            margin-top: 10px;
+        }
+        .now-playing-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="now-playing-box">
+        <div class="now-playing-title">Huz Now Playing:</div>
+        Loading...
+    </div>
+    <script>!function(e){function t(t){for(var n,i,a=t[0],c=t[1],l=t[2],s=0,p=[];s<a.length;s++)i=a[s],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&p.push(o[i][0]),o[i]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(t);p.length;)p.shift()();return u.push.apply(u,l||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,a=1;a<r.length;a++){var c=r[a];0!==o[c]&&(n=!1)}n&&(u.splice(t--,1),e=i(i.s=r[0]))}return e}var n={},o={1:0},u=[];function i(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[],r=o[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=o[e]=[t,n]}));t.push(r[2]=n);var u,a=document.createElement("script");a.charset="utf-8",a.timeout=120,i.nc&&a.setAttribute("nonce",i.nc),a.src=function(e){return i.p+"static/js/"+({}[e]||e)+"."+{3:"c503da4f"}[e]+".chunk.js"}(e);var c=new Error;u=function(t){a.onerror=a.onload=null,clearTimeout(l);var r=o[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),u=t&&t.target&&t.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,r[1](c)}o[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:a})}),12e4);a.onerror=a.onload=u,document.head.appendChild(a)}return Promise.all(t)},i.m=e,i.c=n,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)i.d(r,n,function(t){return e[t]}.bind(null,n));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="spotify.html",i.oe=function(e){throw console.error(e),e};var a=this.webpackJsonpsite=this.webpackJsonpsite||[],c=a.push.bind(a);a.push=t,a=a.slice();for(var l=0;l<a.length;l++)t(a[l]);var f=c;r()}([])</script>
+    <script src="2.4196b19b.chunk.js"></script>
+    <script src="main.78152019.chunk.js"></script>
+    <script>
+        let accessToken = 'BQAsUHVMQCDlIPjHZu0jxqIWW7OABjHIJz6m21plbbuSoLiRJrXQtCoPDpxqcP2aZ-G0hQ71roihLPSay8Oy2JWUCCBZbqfAMaar_hKrVIsl3znF-a9VodYfGf85OBMXiAPIb8gMn7uaP8Pqk3Goi-EdN2IiZeOVzPWk4hOIkleP9QeU-ayQiB1I_1bBupyb2PtaG5JR5grZPcQ'; // Initial access token
+        const refreshToken = 'AQDLjBNStXw9xho6skmuSSjMUfslolAy8DLk2Xu3xEIhkoH0TbZ35YDqU0p-71ROQwHQm8sDVE4GSFIrW69nDvVT9i5VvD_jqO4rpD--GD9Y-hOOZH9_a6SDaajFah46leM'; // Replace with your actual refresh token
+        const clientId = '8ed630ca0cc24f82b9570eb1e7fc13bd'; // Replace with your actual client ID
+        const clientSecret = '426bd1c7709646d0a913288ae68e63b4'; // Replace with your actual client secret
+        let isPlaying = false;
+
+        async function fetchCurrentlyPlaying() {
+            try {
+                const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+
+                const nowPlayingBox = document.getElementById('now-playing-box');
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        // Token expired, refresh it
+                        await refreshAccessToken();
+                        // Retry fetching currently playing track
+                        await fetchCurrentlyPlaying();
+                        return;
+                    }
+                    nowPlayingBox.innerHTML = 'Nothing is being played currently';
+                    isPlaying = false;
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                if (data && data.is_playing) {
+                    const track = data.item;
+                    nowPlayingBox.innerHTML = `
+                        <div class="now-playing-title">Now Playing</div>
+                        <iframe src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" width="100%" height="152" allowtransparency="true" allow="encrypted-media"></iframe>
+                    `;
+                    isPlaying = true;
+                } else {
+                    nowPlayingBox.innerHTML = 'Nothing is being played currently';
+                    isPlaying = false;
+                }
+            } catch (error) {
+                console.error('Fetch error: ', error);
+                document.getElementById('now-playing-box').innerHTML = 'Failed to fetch currently playing track';
+                isPlaying = false;
+            }
+
+            if (!isPlaying) {
+                setTimeout(fetchCurrentlyPlaying, 5000);
+            }
+        }
+
+        async function refreshAccessToken() {
+            const authOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+                },
+                body: new URLSearchParams({
+                    'grant_type': 'refresh_token',
+                    'refresh_token': refreshToken
+                })
+            };
+
+            try {
+                const response = await fetch('https://accounts.spotify.com/api/token', authOptions);
+                if (!response.ok) {
+                    throw new Error('Failed to refresh access token');
+                }
+
+                const data = await response.json();
+                accessToken = data.access_token;
+            } catch (error) {
+                console.error('Token refresh error: ', error);
+            }
+        }
+
+        fetchCurrentlyPlaying();
+    </script>
+</body>
+</html>
