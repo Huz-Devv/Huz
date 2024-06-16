@@ -52,7 +52,7 @@
         const refreshToken = 'AQDLjBNStXw9xho6skmuSSjMUfslolAy8DLk2Xu3xEIhkoH0TbZ35YDqU0p-71ROQwHQm8sDVE4GSFIrW69nDvVT9i5VvD_jqO4rpD--GD9Y-hOOZH9_a6SDaajFah46leM'; // Replace with your actual refresh token
         const clientId = '8ed630ca0cc24f82b9570eb1e7fc13bd'; // Replace with your actual client ID
         const clientSecret = '426bd1c7709646d0a913288ae68e63b4'; // Replace with your actual client secret
-        let isPlaying = false;
+        let currentTrackId = null;
 
         async function fetchCurrentlyPlaying() {
             try {
@@ -72,7 +72,6 @@
                         return;
                     }
                     nowPlayingBox.innerHTML = 'Nothing is being played currently';
-                    isPlaying = false;
                     throw new Error('Network response was not ok');
                 }
 
@@ -80,24 +79,24 @@
 
                 if (data && data.is_playing) {
                     const track = data.item;
-                    nowPlayingBox.innerHTML = `
-                        <div class="now-playing-title">Now Playing</div>
-                        <iframe src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" width="100%" height="152" allowtransparency="true" allow="encrypted-media"></iframe>
-                    `;
-                    isPlaying = true;
+                    if (track.id !== currentTrackId) {
+                        currentTrackId = track.id;
+                        nowPlayingBox.innerHTML = `
+                            <div class="now-playing-title">Now Playing</div>
+                            <iframe src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" width="100%" height="152" allowtransparency="true" allow="encrypted-media"></iframe>
+                        `;
+                    }
                 } else {
                     nowPlayingBox.innerHTML = 'Nothing is being played currently';
-                    isPlaying = false;
+                    currentTrackId = null;
                 }
             } catch (error) {
                 console.error('Fetch error: ', error);
                 document.getElementById('now-playing-box').innerHTML = 'Failed to fetch currently playing track';
-                isPlaying = false;
+                currentTrackId = null;
             }
 
-            if (!isPlaying) {
-                setTimeout(fetchCurrentlyPlaying, 5000);
-            }
+            setTimeout(fetchCurrentlyPlaying, 5000);
         }
 
         async function refreshAccessToken() {
