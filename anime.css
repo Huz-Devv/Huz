@@ -1,0 +1,108 @@
+body {
+ background: fixed url(https://image.myanimelist.net/ui/OBQhD1PfE-lw-5UcBY4inAiijyW1741WWw-bR2lRe66ir9Hw3JH_z277DYOQ2UVJwkkNtWdLjNW9nV42M4E62qIMZcey35T_wtTCzkIfpytlotBub7RiDmocQD9e-c0O),
+       fixed center/cover url(https://image.myanimelist.net/ui/gcSya8onPajB6FLr_CNy9wWbkAfgACBzPN8nC8vLcbHgZczWX58LDeemMkga4GmK);
+	background-color: black;
+	overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+input[type="text"],
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+  color: black;
+}
+
+button[type="submit"] {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+button.watchlist-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;  /* Make buttons full-width */
+  max-width: 400px;  /* Optional: Set a max-width for both buttons */
+}
+
+a {
+  display: block;  /* Ensure the anchor behaves as a block element */
+  text-align: center;  /* Center-align the button inside the anchor */
+}
+
+a button.watchlist-button {
+  width: 100%;  /* Ensure button inside anchor takes full width */
+}
+
+.anime {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+}
+
+.anime img {
+  width: 100px;
+  height: 140px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.anime h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.anime p {
+    font-size: 18px;
+  margin-bottom: 14px;
+  color: #fff;
+  padding-left: 400px;
+}

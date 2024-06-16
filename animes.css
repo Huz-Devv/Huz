@@ -1,0 +1,86 @@
+body {
+  background: fixed url(https://image.myanimelist.net/ui/OBQhD1PfE-lw-5UcBY4inAiijyW1741WWw-bR2lRe66ir9Hw3JH_z277DYOQ2UVJwkkNtWdLjNW9nV42M4E62qIMZcey35T_wtTCzkIfpytlotBub7RiDmocQD9e-c0O),
+       fixed center/cover url(https://image.myanimelist.net/ui/gcSya8onPajB6FLr_CNy9wWbkAfgACBzPN8nC8vLcbHgZczWX58LDeemMkga4GmK);
+  background-color: black;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+#anime-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.anime-card {
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+button.watchlist-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;  /* Make buttons full-width */
+  max-width: 400px;  /* Optional: Set a max-width for both buttons */
+}
+
+a {
+  display: block;  /* Ensure the anchor behaves as a block element */
+  text-align: center;  /* Center-align the button inside the anchor */
+}
+
+a button.watchlist-button {
+  width: 100%;  /* Ensure button inside anchor takes full width */
+}
+
+.anime-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.anime-card h2 {
+  font-size: 18px;
+  color: white;
+  margin: 10px 0;
+}
+
+.anime-card p {
+  font-size: 14px;
+  color: white;
+}
+
+.edit-btn, .delete-btn {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: blue;
+}
+
+.delete-btn {
+  color: red;
+}
+
+/* New styles for the button container */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
