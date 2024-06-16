@@ -1711,7 +1711,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-list {
-    gap: 30px;
+    gap: 10px;
     padding: 0 20px;
   }
 
