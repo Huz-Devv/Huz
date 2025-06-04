@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Standard Meta Tags -->
   <meta name="title" content="Huz - Landing Page" />
   <meta name="description" content="Welcome to Huz's landing page — showcasing a passionate Developer & Community Manager who loves programming, art, gaming, and more!" />
   <meta name="icon" content="./Favicon.png" />
   <title>Huz - Landing Page</title>
-  <link rel="icon" href="./Favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="./Favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    
     html, body {
       overscroll-behavior-y: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
     }
-    
+
     :root {
       --bg-dark: #0f0f0f;
       --accent1: #61dafb;
@@ -26,8 +28,6 @@
     }
 
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
       font-family: 'Rubik', sans-serif;
     }
@@ -43,30 +43,54 @@
     }
 
     header {
+      position: relative; /* allow absolutely positioned children */
       width: 100%;
       padding: 1rem 2rem;
       background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--accent1);
+      justify-content: flex-start;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     header i {
       font-size: 1.5rem;
       margin-right: 0.5rem;
+      color: var(--accent1);
     }
 
-    header span {
+    .page-title {
+      font-size: 1.5rem;
+      font-weight: bold;
       background: linear-gradient(45deg, var(--accent1), var(--accent2));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       white-space: nowrap;
+      color: #000;
+    }
+
+    /* Center the pill horizontally within the header */
+    .pill-launch {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0.5rem 1.2rem;
+      background: linear-gradient(90deg, #61dafb, #b388eb);
+      border-radius: 999px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #61dafb, 0 0 20px #b388eb;
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-decoration: none;
+      z-index: 10; /* ensure it sits on top */
+    }
+
+    .pill-launch:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 0 25px var(--accent1);
     }
 
     .profile-container {
@@ -96,13 +120,7 @@
     h1 {
       font-family: 'Rubik', sans-serif;
       font-size: 3rem;
-      background: linear-gradient(
-        90deg,
-        #61dafb 0%,
-        #b388eb 40%,
-        #ff79c6 70%,
-        #61dafb 100%
-      );
+      background: linear-gradient(90deg, #61dafb 0%, #b388eb 40%, #ff79c6 70%, #61dafb 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -116,13 +134,13 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center; 
+      justify-content: center;
       gap: 0.8rem;
       margin-bottom: 1.5rem;
     }
 
     .tag {
-      flex: 0 1 auto;      
+      flex: 0 1 auto;
       text-align: center;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       padding: 0.5rem 1rem;
@@ -145,6 +163,7 @@
       justify-content: center;
       gap: 0.8rem;
       margin-bottom: 1.5rem;
+      position: relative;
     }
 
     .socials a {
@@ -159,6 +178,7 @@
       transition: 0.3s ease;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       font-weight: bold;
+      position: relative;
     }
 
     .socials a:hover {
@@ -166,6 +186,25 @@
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       color: #000;
       box-shadow: 0 0 20px var(--accent1);
+    }
+
+    /* Preview thumbnail */
+    .website-button .website-preview {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      border-radius: 10px;
+      border: 3px solid var(--accent2);
+      box-shadow: 0 0 25px var(--accent2);
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .website-button:hover .website-preview {
+      display: block;
     }
 
     .about {
@@ -187,11 +226,65 @@
       font-size: 0.9rem;
     }
 
+    /* -------- Modal Styles (updated) -------- */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* hide any overflow */
+    }
+
+    .modal-content {
+      position: relative;
+      width: 90vw;    /* larger width */
+      height: 90vh;   /* larger height */
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden; /* remove scrollbars */
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 101;
+    }
+
     @media (max-width: 800px) {
       header {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: center;
+      }
+      .pill-launch {
+        position: static;
+        transform: none;
+        margin: 0.5rem auto 0;
       }
     }
 
@@ -211,7 +304,8 @@
 <body>
   <header>
     <i class="fas fa-code"></i>
-    <span>Huz's Landing Page</span>
+    <span class="page-title">Huz's Landing Page</span>
+    <span class="pill-launch">Website just launched</span>
   </header>
 
   <div class="profile-container">
@@ -229,7 +323,15 @@
     </div>
 
     <div class="socials">
-      <a href="https://huz-about.vercel.app/"><i class="fas fa-globe"></i>Website</a>
+      <a href="https://huz-about.vercel.app/" target="_blank" class="website-button">
+        <i class="fas fa-globe"></i>Website
+        <img
+          src="preview.png"
+          alt="Website Preview"
+          class="website-preview"
+          id="preview-img"
+        />
+      </a>
       <a href="mailto:xxhuzxxx@gmail.com"><i class="fas fa-envelope"></i>Email</a>
       <a href="https://discordapp.com/users/980045508141805568" target="_blank"><i class="fab fa-discord"></i>Discord</a>
       <a href="https://x.com/xxHuzxx" target="_blank"><i class="fab fa-x-twitter"></i>Twitter</a>
@@ -237,7 +339,7 @@
     </div>
 
     <div class="about">
-      <p>Hello there! My name is Huz, I am a Developer & Community Manager.</p>
+      <p>Hello there! My name is Huz, I am a Developer, Community Manager &amp; Tech Writer.</p>
       <p>I enjoy programming and love spending my free time exploring a variety of interests. Whether I'm creating art, gaming, hanging out with friends, listening to music, or diving into a good book, I find joy in staying curious and creative.</p>
     </div>
   </div>
@@ -245,5 +347,47 @@
   <footer>
     &copy; 2025 Huz. All rights reserved.
   </footer>
+
+  <!-- Modal overlay (hidden by default) -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <iframe
+        src="https://huz-about.vercel.app/"
+        title="Huz's Website"
+        id="modal-iframe"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Open modal when the preview thumbnail is clicked:
+    const previewImg = document.getElementById('preview-img');
+    const modal = document.getElementById('modal');
+    const modalClose = document.getElementById('modal-close');
+
+    previewImg.addEventListener('click', function(event) {
+      event.preventDefault();
+      modal.style.display = 'flex';
+    });
+
+    // Close modal on clicking the “×” button:
+    modalClose.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+
+    // Also close if user clicks outside the modal-content area:
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Keep the original “pill-launch” button behavior:
+    document.querySelector('.pill-launch')?.addEventListener('click', () => {
+      window.open('https://huz-about.vercel.app/', '_blank');
+    });
+  </script>
 </body>
 </html>
+
